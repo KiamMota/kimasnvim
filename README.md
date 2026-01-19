@@ -1,4 +1,4 @@
-tipo assim eu acho bom pra programar
+minha config de edição para o neovim
 
 instalação:
 
