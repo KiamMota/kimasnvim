@@ -8,8 +8,8 @@ $YELLOW = "`e[33m"
 $BLUE   = "`e[34m"
 $NC     = "`e[0m"
 
-$REPO_URL  = "https://github.com/KiamMota/kimasnvim.git"
-$NVIM_DIR  = "$HOME\.config\nvim"
+$REPO_URL   = "https://github.com/KiamMota/kimasnvim.git"
+$NVIM_DIR   = "$HOME\.config\nvim"
 $BACKUP_DIR = "$HOME\.config\old_nvim_config"
 
 function Fail($msg) {
@@ -38,11 +38,6 @@ git clone $REPO_URL $NVIM_DIR | Out-Null
 $EXEC = Join-Path $NVIM_DIR "exec.sh"
 if (-not (Test-Path $EXEC)) {
     Fail "exec.sh not found in repo root"
-}
-
-# chmod no Windows só faz sentido se estiver em WSL / Git Bash
-if ($IsLinux -or $IsMacOS) {
-    chmod +x $EXEC
 }
 
 Write-Host @"
