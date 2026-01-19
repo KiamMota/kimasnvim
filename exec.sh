@@ -27,6 +27,11 @@ fi
 echo ">> installing KIMASNVIM"
 git clone "$REPO_URL" "$NVIM_DIR" || fail "git clone failed"
 
+EXEC="$NVIM_DIR/exec.sh"
+[ -f "$EXEC" ] || fail "exec.sh not found in repo root"
+chmod +x "$EXEC" || fail "failed to chmod exec.sh"
+
+
 cat <<'EOF'
 wellcome to
 
