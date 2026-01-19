@@ -1,1 +1,1 @@
-assim eu acho bom pra programar
+tipo assim eu acho bom pra programar
