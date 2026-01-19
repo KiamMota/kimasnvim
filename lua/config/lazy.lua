@@ -14,6 +14,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local config_path = vim.fn.stdpath("config") .. "/lua/config"
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -51,3 +53,17 @@ require("lazy").setup({
     },
   },
 })
+
+-- Carrega todos os arquivos de configuração, exceto o próprio lazy.lua
+for _, file in ipairs(vim.fn.globpath(config_path, "*.lua", true, true)) do
+  -- Extrai o nome do módulo
+  local mod = file:gsub(config_path .. "/", ""):gsub("%.lua$", "")
+
+  -- Ignora o próprio arquivo lazy.lua para evitar loop circular
+  if mod ~= "lazy" then
+    local ok, err = pcall(require, "config." .. mod)
+    if not ok then
+      vim.notify(string.format("Erro ao carregar config.%s:\n%s", mod, err), vim.log.levels.ERROR)
+    end
+  end
+end

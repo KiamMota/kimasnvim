@@ -1,4 +1,3 @@
 require("config.lazy")
+require("config.header_guard")
 
-vim.notify("welcome again, Kiam Mota!", vim.log.levels.INFO, nil)
-vim.cmd("colorscheme everforest")
