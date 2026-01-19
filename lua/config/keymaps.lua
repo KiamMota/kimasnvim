@@ -1,41 +1,36 @@
-vim.keymap.set("n", "<Tab>", "$la")
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-
-local function MoverBufferVerticalmente()
-  vim.keymap.set("", "<A-Up>", function()
-    vim.cmd("m .-2")
-  end)
-  vim.keymap.set("", "<A-Down>", function()
-    vim.cmd("m .+1")
-  end)
+local function map(mode, key, action, opts)
+  opts = opts or { noremap = true, silent = true }
+  vim.keymap.set(mode, key, action, opts)
 end
 
--- x vira V no modo normal  
+-- Movimentação rápida dentro da linha
+map("n", "<Tab>", "$la")
 
-vim.keymap.set("n", "x", "V", { noremap = true, silent = false })
+-- Rename do LSP
+map("n", "<leader>rn", vim.lsp.buf.rename)
 
--- duplicar linha
+-- Duplicar linha
+map("n", "<C-d>", function() vim.cmd("t-1") end)
 
-vim.keymap.set("n", "<C-d>", function() vim.cmd("t-1") end, { noremap = true, silent = false })
+-- x vira V no normal (atenção: altera comportamento padrão)
+map("n", "x", "V", { silent = false })
 
-local function NavegacaoBuffer()
-  vim.keymap.set("n", "<A-Right>", function()
-    vim.cmd("wincmd l")
-  end, {})
-  vim.keymap.set("n", "<A-Left>", function()
-    vim.cmd("wincmd h")
-  end, {})
-  vim.keymap.set("n", "<S-Up>", function()
-    vim.cmd("wincmd k")
-  end, {})
-  vim.keymap.set("n", "<S-Down>", function()
-    vim.cmd("wincmd j")
-  end, {})
+-- Navegação entre janelas usando loops
+local nav_keys = {
+  ["<A-Right>"] = "l",
+  ["<A-Left>"] = "h",
+  ["<S-Up>"] = "k",
+  ["<S-Down>"] = "j",
+}
+for k, v in pairs(nav_keys) do
+  map("n", k, function() vim.cmd("wincmd " .. v) end)
 end
 
-  vim.keymap.set("n", "<S-Tab>", ":bnext<CR>", {})
+-- Trocar buffer
+map("n", "<S-Tab>", ":bnext<CR>")
 
-vim.schedule(function()
-  NavegacaoBuffer()
-  MoverBufferVerticalmente()
-end)
+-- Mover linha verticalmente (Alt+Up/Down)
+local move_keys = { ["<A-Up>"] = ".-2", ["<A-Down>"] = ".+1" }
+for k, v in pairs(move_keys) do
+  map("", k, function() vim.cmd("m " .. v) end)
+end
