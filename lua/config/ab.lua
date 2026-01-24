@@ -1,0 +1,8 @@
+vim.keymap.set('ca', '_cstrr', 'const std::string& ')
+vim.keymap.set('ca', '_cstr', 'const std::string& ')
+vim.keymap.set('ca', '_veci', 'std::vector<int> ')
+vim.keymap.set('ca', '_vecs', 'std::vector<std::string> ')
+vim.keymap.set('ca', '_ptr', 'std::unique_ptr<>')
+vim.keymap.set('ca', '_shptr', 'std::shared_ptr<>')
+vim.keymap.set('ca', '_fref', 'float& ')
+vim.keymap.set('ca', '_dref', 'double& ')
