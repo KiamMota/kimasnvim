@@ -17,6 +17,7 @@ vim.opt.numberwidth = 5
 vim.opt.signcolumn = "yes"
 vim.opt.guicursor = "n-v-i-c-ci-r:ver25-blinkwait175-blinkoff150-blinkon175"
 
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" 
 if vim.g.neovide then
   vim.g.neovide_floating_blur_amount_x = 0
   vim.g.neovide_floating_blur_amount_y = 0

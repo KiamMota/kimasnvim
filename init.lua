@@ -5,6 +5,7 @@ vim.filetype.add({
   }
 })
 
+vim.opt.termguicolors = true
 vim.g.maplocalleader = '\\'
 vim.api.nvim_create_user_command("Edit", function()
   local config_path = vim.fn.stdpath("config")

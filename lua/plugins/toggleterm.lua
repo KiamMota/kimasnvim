@@ -4,13 +4,11 @@ vim.pack.add({
 
 require("toggleterm").setup({
   start_in_insert = true,
-  direction = "float",
+  direction = "horizontal", -- Mudado de 'float' para 'horizontal' para ficar embaixo
   close_on_exit = true,
-  float_opts = {
-    border = "rounded",
-    winblend = 0,
-  },
+  size = 15,                -- Define a altura fixa do terminal embaixo (em linhas)
   on_open = function(term)
+    -- Mantém sua regra para fechar o terminal ao apertar Esc de dentro dele
     vim.api.nvim_buf_set_keymap(
       term.bufnr,
       "t",
@@ -21,9 +19,7 @@ require("toggleterm").setup({
   end,
 })
 
+-- Atalho corrigido para abrir o terminal embaixo com tamanho fixo
 vim.keymap.set("n", "<leader>t", function()
-  require("toggleterm.terminal").Terminal:new({
-    direction = "float",
-    size = 7
-  }):toggle()
+  require("toggleterm").toggle(1, 15, nil, "horizontal")
 end, { noremap = true, silent = true })
