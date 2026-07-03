@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "alpha-nvim": {
+      "rev": "6c6a89d5b068b5251c8bdf0dd57bb921bcfeeb09",
+      "src": "https://github.com/goolord/alpha-nvim"
+    },
     "blink.cmp": {
       "rev": "69b469147fd879ac30d815ecd2477b1ee9b6e2c7",
       "src": "https://github.com/saghen/blink.cmp"
@@ -39,6 +43,10 @@
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.starter": {
+      "rev": "a1c26c1c4acd08beb5b0057c663acb6e5f5b7042",
+      "src": "https://github.com/echasnovski/mini.starter"
     },
     "neo-tree.nvim": {
       "rev": "84c75e7a7e443586f60508d12fc50f90d9aee14e",
