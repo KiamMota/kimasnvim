@@ -20,6 +20,8 @@ vim.keymap.set('n', '<Down>', '<Nop>')
 vim.keymap.set('n', '<Left>', '<Nop>')
 vim.keymap.set('n', '<Right>', '<Nop>')
 
+
+
 vim.keymap.set('i', '<Up>', '<Nop>')
 vim.keymap.set('i', '<Down>', '<Nop>')
 vim.keymap.set('i', '<Left>', '<Nop>')
@@ -27,8 +29,15 @@ vim.keymap.set('i', '<Right>', '<Nop>')
 
 vim.keymap.set('n', '<C-Left>', ':bprevious<CR>', { desc = 'prev buf' })
 vim.keymap.set('n', '<C-Right>', ':bnext<CR>', { desc = 'next buf' })
+
 vim.keymap.set('n', '<C-l>', ":bnext<CR>")
 vim.keymap.set('n', '<C-h>', ":bnext<CR>")
+
+vim.keymap.set('n', '<A-h>', '<C-w>h')
+vim.keymap.set('n', '<A-j>', '<C-w>j')
+vim.keymap.set('n', '<A-k>', '<C-w>k')
+vim.keymap.set('n', '<A-l>', '<C-w>l')
+
 vim.keymap.set('n', '<S-Tab>', ':bnext<CR>')
 
 vim.cmd([[cnoreabbrev Thisd lcd %:p:h]])
