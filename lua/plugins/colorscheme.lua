@@ -1,8 +1,7 @@
 -- lua/plugins/colorscheme.lua
 
 vim.pack.add({
-  'https://github.com/mofiqul/vscode.nvim',           -- VS Code dark
-  "https://github.com/mofiqul/dracula.nvim",
+  "https://github.com/bluz71/vim-moonfly-colors"
 })
 
 -- Troque o nome para experimentar cada um:
@@ -12,4 +11,4 @@ vim.pack.add({
 -- 'tokyonight'   → Tokyo Night
 -- 'catppuccin'   → Catppuccin Mocha
 
-vim.cmd.colorscheme('vscode')
+vim.cmd.colorscheme('moonfly')
