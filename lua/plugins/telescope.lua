@@ -1,11 +1,9 @@
-
 vim.pack.add({
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/nvim-telescope/telescope.nvim',
 })
 
 local actions = require('telescope.actions')
-
 require('telescope').setup({
   defaults = {
     layout_strategy = 'flex',
@@ -41,14 +39,13 @@ require('telescope').setup({
       },
     },
   },
-
   pickers = {
     find_files = {
-      hidden       = true,
-      find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*' },
+      hidden = true,
+      -- Usa o finder nativo do Telescope (sem rg)
     },
     live_grep = {
-      additional_args = { '--hidden' },
+      -- Usa o grep nativo do Telescope
     },
     buffers = {
       sort_mru              = true,
