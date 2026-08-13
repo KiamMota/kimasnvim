@@ -7,7 +7,6 @@ vim.pack.add({
     end
   }
 })
-
 -- Carrega o plugin quando entrar no modo de inserção
 vim.api.nvim_create_autocmd("InsertEnter", {
   callback = function()

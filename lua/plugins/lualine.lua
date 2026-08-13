@@ -64,3 +64,4 @@ end
 -- NOVO ESTILO 2: EVIL LUALINE MODIFICADO (Elegante e Transparente)
 -- Uma barra minimalista sem blocos de cores sólidas, focada em texto puro.
 -- ===========================================================
+setup_bubbles()
