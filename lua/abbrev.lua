@@ -47,14 +47,5 @@ abbrev({'heigth', 'heigt'}, 'height')
 
 abbrev({'arrow', 'arrf'}, '=>')
 
-abbrev({'to'}, '->')
-    
-abbrev({'todo'}, '// TODO:')
-abbrev({'fixme'}, '// FIXME:')
-
-abbrev({'clog'}, 'console.log()')
-abbrev({'vprint'}, 'print(f"")')
-
-abbrev({'req'}, 'require("")')
 
 return M
