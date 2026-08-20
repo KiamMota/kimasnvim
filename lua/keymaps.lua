@@ -29,6 +29,7 @@ vim.keymap.set('i', '<Right>', '<Nop>')
 
 vim.keymap.set('n', '<C-Left>', ':bprevious<CR>', { desc = 'prev buf' })
 vim.keymap.set('n', '<C-Right>', ':bnext<CR>', { desc = 'next buf' })
+vim.keymap.set('n', '<leader>cl', ':close<CR>', {desc = 'close buffer'})
 
 vim.keymap.set('n', '<C-l>', ":bnext<CR>")
 vim.keymap.set('n', '<C-h>', ":bnext<CR>")
